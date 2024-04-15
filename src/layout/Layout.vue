@@ -9,7 +9,7 @@ import NavBar from './NavBar.vue'
       <SideMenu />
     </el-aside>
     <div class="wrapper-right">
-      <div class="header">
+      <div class="nav-bar">
         <NavBar />
       </div>
       <div class="main">
@@ -31,7 +31,7 @@ import NavBar from './NavBar.vue'
   }
 }
 
-.header {
+.nav-bar {
   height: 40px;
   display: flex;
 }
@@ -40,5 +40,6 @@ import NavBar from './NavBar.vue'
   height: calc(100% - 40px);
   padding-top: 8px;
   overflow: hidden scroll;
+  overflow-y: overlay;
 }
 </style>

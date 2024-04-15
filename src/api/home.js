@@ -1,19 +1,19 @@
 import { request } from '@/utils/request'
 
 export const gaodeGetAddress = (params) => {
-  return request({
-    method: 'get',
-    url: 'https://restapi.amap.com/v3/ip',
-    params,
-  })
+  return request(
+    'get',
+    'https://restapi.amap.com/v3/ip',
+    params
+  )
 }
 
 export const getWeatherInfo = (params) => {
-  return request({
-    method: 'get',
-    url: 'https://restapi.amap.com/v3/weather/weatherInfo',
-    params,
-  })
+  return request(
+    'get',
+    'https://restapi.amap.com/v3/weather/weatherInfo',
+    params
+  )
 }
 
 export const getScheduleList = (params) => {

@@ -7,8 +7,8 @@ const route = useRoute()
 const searchKeyWord = ref('')
 const mode = ref('day')
 function changeMode(value) {
-  console.log(value)
-  document.body.className = value
+  console.log(document.getElementsByTagName('html'), 'dddd')
+  document.getElementsByTagName('html')[0].className = value
 }
 </script>
 

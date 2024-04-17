@@ -13,6 +13,9 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [{
     path: '/',
+    redirect: '/blue-whale'
+  },{
+    path: '/blue-whale',
     component: () => import('@/views/home/index.vue'),
     name: 'Home'
   }, ...routes]

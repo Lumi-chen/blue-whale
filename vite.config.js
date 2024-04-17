@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
 import svgLoader from 'vite-svg-loader'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
@@ -27,7 +28,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "../src/assets/variable.scss";',
+        // additionalData: `@import "@/assets/style/element-variable-pink.scss";`,
+        additionalData: `@use 'sass:math';@import "@/assets/style/theme.scss";`,
         javascriptEnabled: true
       }
     }

@@ -29,7 +29,7 @@ function changeMode(value) {
           <Sunny color="black" />
         </template>
       </el-switch>
-      <el-button text circle>
+      <el-button text circle click="">
         <el-icon>
           <Setting />
         </el-icon>

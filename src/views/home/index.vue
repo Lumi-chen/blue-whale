@@ -1,12 +1,19 @@
 <template>
-  <h3 class="blod-title">🎉 Welcome Back，Lumi</h3>
+  <h3 class="mode-title">🎉 Welcome Back，Lumi</h3>
   <el-row type="flex" class="flex-top">
-    <el-col class="user theme-box "></el-col>
-    <el-col class="theme-box "></el-col>
+    <el-col class="user mode-box ">
+      <el-button>Default</el-button>
+      <el-button type="primary">Primary</el-button>
+      <el-button type="success">Success</el-button>
+      <el-button type="info">Info</el-button>
+      <el-button type="warning">Warning</el-button>
+      <el-button type="danger">Danger</el-button>
+    </el-col>
+    <el-col class="mode-box "></el-col>
   </el-row>
   <el-row type="flex" class="flex-middle">
-    <el-col class="theme-box "></el-col>
-    <el-col class="list theme-box "></el-col>
+    <el-col class="mode-box"></el-col>
+    <el-col class="list mode-box "></el-col>
   </el-row>
 </template>
 
@@ -19,6 +26,7 @@
     height: 120px;
     padding: 16px;
     flex: 1;
+    display: flex;
   }
 
   .user {

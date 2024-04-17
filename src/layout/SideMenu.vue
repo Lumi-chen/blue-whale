@@ -1,6 +1,7 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
 import { routes } from '../router/index'
+import { setting } from '@/setting'
 const router = useRouter()
 const route = useRoute()
 function handleMenuClick(item) {
@@ -14,7 +15,7 @@ console.log(route)
 
 <template>
   <div class="menu">
-    <div class="title">Blue Whale</div>
+    <div class="title">{{ setting.title }}</div>
     <div class="line" />
     <div class="list">
       <el-row v-for="item in routes" :key="item.name" type="flex" align="middle" class="list-row"
@@ -40,7 +41,7 @@ console.log(route)
 <style scoped lang="scss">
 .menu {
   height: 100%;
-  background: var(--theme-menu-color); // #323236;
+  background: var(--mode-menu-color); // #323236;
   padding: 16px;
   border-radius: 8px;
 
@@ -71,13 +72,13 @@ console.log(route)
       }
 
       &:hover {
-        background-color: $primaryColor;
+        background-color: $primary-color;
         cursor: pointer;
       }
     }
 
     .active-menu {
-      background-color: $primaryColor;
+      background-color: $primary-color;
     }
   }
 }

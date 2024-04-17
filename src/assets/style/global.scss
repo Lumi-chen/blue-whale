@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  background-color: var(--theme-background-color);
+  background-color: var(--mode-background-color);
   height: 100vh;
   width: 100%;
 }
@@ -14,42 +15,41 @@ body {
   box-sizing: border-box;
   font-family:'Roboto', sans-serif;
 }
-.blod-title {
+.mode-title {
   font-weight: 600;
-  color: var(---theme-font-color);
+  color: var(--mode-font-color);
 }
 
 :root {
-  --theme-background-color: #f0f2f5;
-  --theme-box-color: #fff;
-  --theme-menu-color: linear-gradient(195deg, #42424a, #191919);
-  ---theme-font-color: #000;
+  --mode-background-color: #f0f2f5;
+  --mode-box-color: #fff;
+  --mode-menu-color: linear-gradient(195deg, #42424a, #191919);
+  --mode-font-color: #000;
 }
 
 // 日间模式 start
 .day {
-  --theme-background-color: #f0f2f5;
-  --theme-box-color: #fff;
-  --theme-menu-color: linear-gradient(195deg, #42424a, #191919);
-  ---theme-font-color: #000;
+  --mode-background-color: #f0f2f5;
+  --mode-box-color: #fff;
+  --mode-menu-color: linear-gradient(195deg, #42424a, #191919);
+  --mode-font-color: #000;
 }
 // 日间模式 end
 
 // 夜间模式 start
 .dark {
-  --theme-background-color: #1a2035;
-  --theme-box-color: #313852;
-  --theme-menu-color: linear-gradient(195deg,#323a54,#1a2035);
-  ---theme-font-color: #fff;
+  --mode-background-color: #1a2035;
+  --mode-box-color: #313852;
+  --mode-menu-color: linear-gradient(195deg,#323a54,#1a2035);
+  --mode-font-color: #fff;
   --el-text-color-regular: #CFD3DC !important;
   --el-text-color-primary: #E5EAF3  !important;
 }
 // 夜间模式 end
 
-// 
-.theme-box {
-  background: var(--theme-box-color);
-  color: var(---theme-font-color);
+.mode-box {
+  background: var(--mode-box-color);
+  color: var(--mode-font-color);
 }
 
 // 滚动条通用样式 start

@@ -46,6 +46,7 @@ module.exports = {
     'max-nested-callbacks': ['warn', 3], // 要求回调函数最大嵌套深度3
     'quotes': ['warn', 'single', 'avoid-escape'], // 要求统一使用单引号符号
     'comma-dangle': 0,
-    'vue/multi-word-component-names': 0
+    'vue/multi-word-component-names': 0,
+    'allowImportExportEverywhere': true
   }
 }

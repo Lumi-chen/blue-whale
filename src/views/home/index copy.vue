@@ -43,13 +43,13 @@ getSchedule()
     </div>
     <el-row class="user-box" type="flex" justify="space-between">
       <el-col :span="16" style="display: flex; justify-content: space-between; flex-direction: column;">
-        <div class="blod-title">🎉 Welcome Back，Lumi</div>
+        <div class="mode-title">🎉 Welcome Back，Lumi</div>
         <el-row type="flex" justify="space-between" style="font-size: 16px;">
-          <span class="blod-title">To Do</span>
-          <span><span class="blod-title">7 </span>items</span>
+          <span class="mode-title">To Do</span>
+          <span><span class="mode-title">7 </span>items</span>
         </el-row>
         <el-row type="flex" justify="space-between" style="font-size: 16px;">
-          <span class="blod-title" style="line-height: 32px;">Message</span>
+          <span class="mode-title" style="line-height: 32px;">Message</span>
           <div>
             <el-avatar v-for="item in 5" :key="item" class="avatar" :size="32"
               src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
@@ -69,9 +69,9 @@ getSchedule()
       <div class="title">Daily Schedule</div>
       <div style="overflow: hidden scroll;height: calc(100% - 32px);">
         <el-row v-for="sc in scheduleList" :key="sc.key" class="schedule-row" type="flex" justify="space-between">
-          <div class="blod-title time">{{ sc.time }}</div>
+          <div class="mode-title time">{{ sc.time }}</div>
           <div class="content">
-            <span class="blod-title theme">{{ sc.title }}</span>
+            <span class="mode-title theme">{{ sc.title }}</span>
             <span class="place">{{ sc.place }}</span>
           </div>
         </el-row>
@@ -82,7 +82,7 @@ getSchedule()
         <barChart />
       </div>
       <div class="content">
-        <div style="font-size: 18px;" class="blod-title">Bug Statistics</div>
+        <div style="font-size: 18px;" class="mode-title">Bug Statistics</div>
         <div>Count the number of bugs in the past seven days</div>
       </div>
     </div>
@@ -93,7 +93,7 @@ getSchedule()
 .weather {
   // background-color: #161211;
   flex: 1;
-  background-color: $primaryColor;
+  background-color: $--primary-color;
   color: #fff;
   display: flex;
   justify-content: space-between;

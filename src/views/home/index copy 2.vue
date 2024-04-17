@@ -1,5 +1,5 @@
 <template>
-  <h3 class="blod-title">🎉 Welcome Back，Lumi</h3>
+  <h3 class="mode-title">🎉 Welcome Back，Lumi</h3>
   <el-row type="flex" class="flex-top">
     <el-col class="user box"></el-col>
     <el-col class="box"></el-col>

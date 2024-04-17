@@ -10,7 +10,7 @@ import * as echarts from 'echarts/core'
 import { GridComponent } from 'echarts/components'
 import { BarChart } from 'echarts/charts'
 import { CanvasRenderer } from 'echarts/renderers'
-import setTheme from './utils/style'
+import setTheme, {handleMode} from './utils/style'
 
 const app = createApp(App)
 
@@ -27,3 +27,4 @@ app.config.globalProperties.$echarts = echarts
 app.mount('#app')
 
 setTheme('pink')
+handleMode()

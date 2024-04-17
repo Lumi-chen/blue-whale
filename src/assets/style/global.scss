@@ -14,6 +14,7 @@ body {
 * { 
   box-sizing: border-box;
   font-family:'Roboto', sans-serif;
+  width: auto;
 }
 .mode-title {
   font-weight: 600;
@@ -71,3 +72,7 @@ body {
 	background-color: #ccc;
 }
 // 滚动条通用样式 end
+
+.el-row {
+  width: 100%;
+}

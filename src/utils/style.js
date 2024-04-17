@@ -37,8 +37,6 @@ const colors = {
   }
 }
 
-
-
 export default function setTheme(params) {
   const localColor = localStorage.getItem('themeColor') || 'pink'
   const themeColor = params || localColor
@@ -47,4 +45,26 @@ export default function setTheme(params) {
     el.style.setProperty(key, colors[themeColor][key])
   }
   localStorage.setItem('themeColor', themeColor )
+}
+
+export function handleMode() {
+  const { isFollow, modeType } = JSON.parse(localStorage.getItem('Mode'))
+  console.log(new Date().getHours() > 18)
+  const mode = new Date().getHours() > 18 ? 'dark' : 'day'
+
+  if (isFollow ) {
+    document.getElementsByTagName('html')[0].className = mode
+    changeMode(isFollow, mode)
+  } else {
+    document.getElementsByTagName('html')[0].className = modeType
+  }
+}
+
+export function changeMode(isFollow, modeType) {
+  const params = {isFollow, modeType}
+  localStorage.setItem('Mode', JSON.stringify(params))
+}
+
+export function getMode(isFollow, modeType) {
+  return JSON.parse(localStorage.getItem('Mode'))
 }

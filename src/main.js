@@ -11,11 +11,11 @@ import { GridComponent } from 'echarts/components'
 import { BarChart } from 'echarts/charts'
 import { CanvasRenderer } from 'echarts/renderers'
 import setTheme, {handleMode} from './utils/style'
+import i18n from './i18n'
 
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(router)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
@@ -23,6 +23,7 @@ echarts.use([GridComponent, BarChart, CanvasRenderer])
 
 app.use(ElementPlus)
 app.use(router)
+app.use(i18n)
 app.config.globalProperties.$echarts = echarts
 app.mount('#app')
 

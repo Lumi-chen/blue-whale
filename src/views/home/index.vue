@@ -1,5 +1,5 @@
 <template>
-  <h3 class="mode-title">🎉 Welcome Back，Lumi</h3>
+  <h3 class="mode-title">🎉 {{ $t('home.welcomBack') }}，Lumi</h3>
   <el-row type="flex" class="flex-top">
     <el-col class="user mode-box ">
       <el-button>Default</el-button>
@@ -9,7 +9,9 @@
       <el-button type="warning">Warning</el-button>
       <el-button type="danger">Danger</el-button>
     </el-col>
-    <el-col class="mode-box "></el-col>
+    <el-col class="mode-box ">
+      {{ $t('hello') }}
+    </el-col>
   </el-row>
   <el-row type="flex" class="flex-middle">
     <el-col class="mode-box"></el-col>

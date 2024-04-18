@@ -4,6 +4,10 @@ import { ref } from 'vue'
 import { setting } from '@/setting'
 import Lang from '@/assets/svg/lang.svg'
 import setTheme, { changeMode, handleMode } from '@/utils/style'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
 const route = useRoute()
 const searchKeyWord = ref('')
 const mode = ref('day')
@@ -20,12 +24,21 @@ function changeModeFollow(value) {
   changeMode(value, 'day')
   handleMode()
 }
+function changeLang() {
+  const lang = localStorage.getItem('langType')
+  // let { locale } = i18n.global
+  const newLang = lang === 'zh' ? 'en' : 'zh'
+  console.log(lang, 'lang', typeof locale, newLang)
+  // locale = newLang
+  localStorage.setItem('langType', newLang)
+  locale.value = newLang
+}
 </script>
 
 <template>
   <div class="nav-bar">
     <el-breadcrumb separator="/" class="bar-left">
-      <el-breadcrumb-item :to="{ path: '/' }">{{ setting.title }}</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: '/' }">{{ $t(`${setting.title}`) }}</el-breadcrumb-item>
       <el-breadcrumb-item v-if="route.path !== '/'" :to="{ path: route.path }">{{ route.name }}</el-breadcrumb-item>
     </el-breadcrumb>
     <div class="bar-right">
@@ -49,7 +62,7 @@ function changeModeFollow(value) {
           <Bell />
         </el-icon>
       </el-button>
-      <el-button text circle>
+      <el-button text circle @click="changeLang">
         <Lang />
       </el-button>
       <el-button text circle>
@@ -59,7 +72,8 @@ function changeModeFollow(value) {
       </el-button>
     </div>
   </div>
-  <el-drawer v-model="settingVisible" class="setting" :with-header="false" direction="rtl" :before-close="handleClose">
+  <el-drawer v-model="settingVisible" class="setting" :with-header="false" direction="rtl"
+    :before-close="() => { settingVisible = !settingVisible }">
     <el-row type="flex" justify="space-between">
       <div>
         <h2>System Setting</h2>

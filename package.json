@@ -19,6 +19,7 @@
     "sass": "^1.75.0",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.21",
+    "vue-i18n": "^9.13.0",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {

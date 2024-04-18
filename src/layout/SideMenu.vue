@@ -15,24 +15,15 @@ console.log(route)
 
 <template>
   <div class="menu">
-    <div class="title">{{ setting.title }}</div>
+    <div class="title">{{ $t(`${setting.title}`) }}</div>
     <div class="line" />
     <div class="list">
       <el-row v-for="item in routes" :key="item.name" type="flex" align="middle" class="list-row"
         :class="route.name === item.name ? 'active-menu' : ''" @click="handleMenuClick(item)">
-        <!-- <template v-if="item.children?.length">
-          <div v-if="item.children?.length" class="bold-title">{{ item.name }}</div>
-          <template v-else>
-            <div v-for="menuItem in item">
-              <el-icon><Menu /></el-icon>
-              <span>{{ menuItem.name }}</span>
-            </div>
-          </template>
-</template> -->
         <el-icon>
           <Menu />
         </el-icon>
-        <span class="menu-title">{{ item.name }}</span>
+        <span class="menu-title">{{ $t(`menu.${item.name}`) }}</span>
       </el-row>
     </div>
   </div>

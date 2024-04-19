@@ -12,6 +12,8 @@ import { BarChart } from 'echarts/charts'
 import { CanvasRenderer } from 'echarts/renderers'
 import setTheme, {handleMode} from './utils/style'
 import i18n from './i18n'
+import 'virtual:svg-icons-register'
+import svgIcon from './components/svgIcon.vue'
 
 const app = createApp(App)
 
@@ -19,6 +21,7 @@ app.use(createPinia())
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
+app.component('SvgIcon', svgIcon)
 echarts.use([GridComponent, BarChart, CanvasRenderer])
 
 app.use(ElementPlus)

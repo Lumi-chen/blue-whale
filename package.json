@@ -30,9 +30,11 @@
     "@vue/test-utils": "^2.4.5",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
+    "fast-glob": "^3.3.2",
     "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
     "vite": "^5.2.8",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vitest": "^1.4.0"
   }
 }

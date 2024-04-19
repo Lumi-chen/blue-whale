@@ -49,9 +49,7 @@ export default function setTheme(params) {
 
 export function handleMode() {
   const { isFollow, modeType } = JSON.parse(localStorage.getItem('Mode'))
-  console.log(new Date().getHours() > 18)
-  const mode = new Date().getHours() > 18 ? 'dark' : 'day'
-
+  const mode = new Date().getHours() >= 18 ? 'dark' : 'day'
   if (isFollow ) {
     document.getElementsByTagName('html')[0].className = mode
     changeMode(isFollow, mode)

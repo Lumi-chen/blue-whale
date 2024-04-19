@@ -4,7 +4,8 @@ const zh = {
     'welcomBack': '欢迎回来'
   },
   menu: {
-    OverView: '概览'
+    Calendar: '日程计划',
+    DashBoard: '仪表盘'
   }
 }
 export default zh

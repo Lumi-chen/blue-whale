@@ -2,9 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/over-view',
-    component: () => import('@/views/over-view/index.vue'),
-    name: 'OverView'
+    path: '/blue-whale',
+    component: () => import('@/views/dash-borad/index.vue'),
+    name: 'DashBoard'
+  },
+  {
+    path: '/calendar-plan',
+    component: () => import('@/views/calendar-plan/index.vue'),
+    name: 'Calendar'
   }
   // { path: '/about', component: 'About', name: 'About' },
 ]
@@ -14,10 +19,6 @@ const router = createRouter({
   routes: [{
     path: '/',
     redirect: '/blue-whale'
-  },{
-    path: '/blue-whale',
-    component: () => import('@/views/home/index.vue'),
-    name: 'Home'
   }, ...routes]
 
 })

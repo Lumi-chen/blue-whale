@@ -1,4 +1,4 @@
-export function dateTimeFormate(date = new Date(), formate = 'yyyy-MM-dd hh:mm:ss') {
+export function dateTimeFormate(date = new Date(), formate) {
   const year = date.getFullYear()
   const fullMonth = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
   const month = date.getMonth() + 1
@@ -19,7 +19,7 @@ export function dateTimeFormate(date = new Date(), formate = 'yyyy-MM-dd hh:mm:s
     case 'hh:mm:ss':
       return `${hour}:${min}:${sec}`
     default:
-      break
+      return date.getTime()
   }
 }
 

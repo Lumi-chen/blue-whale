@@ -4,7 +4,8 @@ const en = {
     'welcomBack': 'Welcome Back'
   },
   menu: {
-    OverView: 'OverView'
+    Calendar: 'Calendar',
+    DashBoard: 'DashBoard'
   }
 }
 export default en

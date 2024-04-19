@@ -1,10 +1,10 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import svgLoader from 'vite-svg-loader'
+import path from 'node:path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +19,12 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    svgLoader()
+    svgLoader(),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), "src/assets/svg")],
+      symbolId: 'icon-[name]',
+      inject: 'body-last'
+    })
   ],
   resolve: {
     alias: {

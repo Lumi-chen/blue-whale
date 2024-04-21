@@ -18,7 +18,7 @@ body {
 }
 .mode-title {
   font-weight: 600;
-  color: var(--mode-font-color);
+  // color: var(--mode-font-color);
 }
 
 :root {
@@ -49,8 +49,7 @@ body {
 // 夜间模式 end
 
 .mode-box {
-  background: var(--mode-box-color);
-  color: var(--mode-font-color);
+  background: var(--mode-box-color) !important;
   border-radius: 8px;
 }
 
@@ -76,4 +75,8 @@ body {
 
 .el-row {
   width: 100%;
+}
+
+.el-button.is-text:not(.is-disabled):hover, .el-button.is-text:not(.is-disabled):active {
+  background-color: transparent !important;
 }

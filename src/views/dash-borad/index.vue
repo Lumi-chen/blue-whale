@@ -13,7 +13,7 @@
             </div>
           </div>
           <div style="display: flex;">
-            <div class="user-info">
+            <div class="user-info weather">
               <span class="mode-title" style="font-size: 20px;">{{ weatherInfo.temperature }}℃</span>
               <span>{{ weatherInfo.weather }}</span>
             </div>
@@ -43,7 +43,8 @@
     <el-col class="mode-box quick-box">
       <el-row class="mode-title" style="font-size: 16px;">Quick Entrance</el-row>
       <el-row type="flex" justify="space-around">
-        <div v-for="menu in menuList" :key="menu.code" :title="menu.title" style="cursor: pointer;" @click="">
+        <div v-for="menu in menuList" :key="menu.code" :title="menu.title" style="cursor: pointer;"
+          @click="goPages(menu.code)">
           <div class="quick-item">
             <Menu style="width: 1em; height: 1em;color: #fff;" />
           </div>
@@ -53,7 +54,7 @@
     </el-col>
   </el-row>
   <el-row type=" flex" class="flex-middle">
-    <el-col class="mode-box">
+    <el-col>
       <el-button>Default</el-button>
       <el-button type="primary">Primary</el-button>
       <el-button type="success">Success</el-button>
@@ -61,7 +62,11 @@
       <el-button type="warning">Warning</el-button>
       <el-button type="danger">Danger</el-button>
     </el-col>
-    <el-col class="list mode-box "></el-col>
+    <el-col class="list">
+      <el-row class="task mode-title"><span>Task</span></el-row>
+      <div v-for="task in taskList" :key="task.id"></div>
+      <el-button text icon="Plus">New Task</el-button>
+    </el-col>
   </el-row>
 </template>
 
@@ -71,6 +76,7 @@ import { useUserStore } from '@/stores/user'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import { getWeatherIcon } from '@/utils/weather'
+import { useRouter } from 'vue-router'
 const mood = ref('bot')
 const { userInfo, joinTime } = storeToRefs(useUserStore())
 const icons = [
@@ -81,8 +87,9 @@ const icons = [
   { key: 'moyu', name: 'moyu', title: '摸鱼' },
 ]
 const menuList = [
-  { code: 'Calender', title: 'Go to Calender' }
+  { code: 'Calendar', title: 'Go to Calendar' }
 ]
+const taskList = []
 function changeMood(value) {
   console.log(value)
   mood.value = value
@@ -106,6 +113,14 @@ async function getWeather() {
   weatherInfo.value.icon = getWeatherIcon(weatherInfo.value.weather)
   console.log(weatherInfo.value)
 }
+const router = useRouter()
+function goPages(menu) {
+  console.log(menu)
+  router.push({
+    name: menu,
+    params: {}
+  })
+}
 await getAddreeInfo()
 await getWeather()
 </script>
@@ -128,6 +143,12 @@ await getWeather()
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+    }
+
+    .weather {
+      margin-right: 10px;
+      text-align: center;
     }
   }
 
@@ -151,13 +172,29 @@ await getWeather()
 
   .el-col {
     border-radius: 8px;
-    padding: 16px;
     flex: 2;
   }
 
   .list {
-    margin-left: 16px;
     flex: 1;
+
+    .task {
+      background-color: #fddcc5;
+      width: max-content;
+      padding: 4px 8px;
+      border-radius: 4px;
+
+      span::before {
+        content: '';
+        color: #de8652;
+        background-color: #de8652;
+        display: inline-block;
+        margin-right: 6px;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+      }
+    }
   }
 }
 

@@ -2,7 +2,7 @@ export function dateTimeFormate(date = new Date(), formate) {
   const year = date.getFullYear()
   const fullMonth = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
   const month = date.getMonth() + 1
-  const fullDay = date.getDay() < 10 ? `0${date.getDay()}` : date.getDay()
+  const fullDay = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()
   const day = date.getDate()
   const hour = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
   const min = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
@@ -18,6 +18,15 @@ export function dateTimeFormate(date = new Date(), formate) {
       return year
     case 'hh:mm:ss':
       return `${hour}:${min}:${sec}`
+    case 'set': 
+      return {
+        year: year,
+        month: month,
+        fullMonth: fullMonth,
+        fullDay: fullDay,
+        day: day,
+        time: date.getTime()
+      }
     default:
       return date.getTime()
   }
@@ -27,3 +36,4 @@ export function weekFormate(week) {
   const weekList = ['一','二','三','四','五','六','日']
   return weekList[Number(week) - 1]
 }
+

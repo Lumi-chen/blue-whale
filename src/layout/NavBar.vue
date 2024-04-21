@@ -72,7 +72,7 @@ function changeLang() {
       </el-button>
     </div>
   </div>
-  <el-drawer v-model="settingVisible" class="setting" :with-header="false" direction="rtl"
+  <el-drawer v-model="settingVisible" class="setting mode-box" :with-header="false" direction="rtl"
     :before-close="() => { settingVisible = !settingVisible }">
     <el-row type="flex" justify="space-between">
       <div>
@@ -135,8 +135,8 @@ function changeLang() {
 }
 
 .setting {
-  color: #000;
 
+  // color: #000;
   &-remark {
     font-size: 16px;
     font-weight: 200;

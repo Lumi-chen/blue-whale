@@ -7,8 +7,8 @@ const routes = [
     name: 'DashBoard'
   },
   {
-    path: '/calendar-plan',
-    component: () => import('@/views/calendar-plan/index.vue'),
+    path: '/calendar',
+    component: () => import('@/views/calendar/index.vue'),
     name: 'Calendar'
   }
   // { path: '/about', component: 'About', name: 'About' },
